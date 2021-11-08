@@ -28,7 +28,9 @@ const getZookeepers = (formData = {}) => {
     queryUrl += `${key}=${value}&`;
   });
 
-  fetch('/api/zookeepers')
+  console.log(queryUrl);
+
+  fetch(queryUrl)
     .then(response => {
       if (!response.ok) {
         return alert('Error: ' + response.statusText);
